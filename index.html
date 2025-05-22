@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio UI/UX Designer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">HAPPY BIRTHDAY 20+</div>
+        <div class="nav-links">
+            <a href="">Home</a>
+            <a href="Tentang.html">Experience</a>
+            <a href="pengalaman.html">Portfolio</a>
+            <a href="study case.html">About Us</a>
+        </div>
+        <a href="Tentang.html" class="contact-btn">Let's Talk</a>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>HappyBirthDay <span>SALSABILANISA</span>,<br> Selamat mengulang hari kelahiran yang ke <span>20 tahun</span><br>sayangg</h1>
+            <p>  Tepat pada hari ini <span>Tanggal 24 Mei 2025</span>,<br> kamu masih bisa menghirup udara segar dan melihat dunia yang begitu indah bukan! yaa walaupun banyak ujian yang kamu terima mungkin itu cara Tuhan membuat kamu lebih kuat kayak sekarang dan aku tidak menyangka Doa apa yang aku ucapkan dahulu sehingga bertemu perempuan sebaik dan sesabar kamu aku yakin ini bukan sekedar pertemuan mungkin ini takdir buat aku bisa melihat perempuan secantikk kamu.
+                Tepat pada tanggal 24 mei 2005,Selamat ulang tahun, Salsabilanisa 🌸
+Hari ini adalah hari istimewa, hari di mana seseorang yang sangat berarti dalam hidupku dilahirkan ke dunia. Kamu bukan hanya cantik luar dalam, tapi juga tulus, cerdas, dan kuat — hal-hal yang selalu membuatku bangga memilikimu.
+Di usiamu yang baru ini, semoga kamu selalu diberi hati yang lapang dalam menghadapi apapun, tetap rendah hati dalam keberhasilan, dan kuat dalam proses kehidupan. Ingat, segala hal indah butuh waktu dan kesabaran. Jangan terlalu keras pada dirimu sendiri.
+Aku berharap semua impianmu satu per satu terwujud, dan aku bisa terus menjadi bagian dari setiap langkahmu. Semoga Tuhan selalu melindungimu, memberkahimu dengan kebahagiaan, dan membukakan jalan yang terbaik untukmu.
+Terima kasih karena sudah menjadi cahaya di hidupku. Aku sayang kamu, lebih dari sekadar kata-kata bisa ungkapkan.
+Happy birthday, my dear Salsabilanisa! 🎂💖
+Mari kita terus tumbuh bersama, dalam cinta dan kebaikan.
+<span>SALSABILANISA</span><br></p>
+            <a href="About.html" class="btn">Hire me</a>
+        </div>
+        <img src="gambar 2.jpg" alt="Anggil Maulana" class="profile-img">
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi & Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="About.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1><span>Foto</span> Saya</h1>
+            <img id="profileImg" src="gambar 5.jpg" alt="Foto saya" class="profile-img">
+            <input type="file" id="fileInput" accept="image/*">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Ganti Foto</button>
+        </div>
+        <p class="quote">"Tambahkan foto terbaik dan pengalaman paling menarik kamu terima kasih."</p>
+        <div class="info">
+            <p><strong>Usia:</strong> 20 tahun</p>
+            <p><strong>Asal:</strong> pidie, Indonesia</p>
+            <p><strong>Profesi:</strong> math education student</p>
+        </div>
+
+        <div class="story-section">
+            <h2>📖 Story</h2>
+            <div class="story-list" id="storyList">
+                <div class="story">
+                    📷 Perjalanan pertama saya sebagai pacar seorang Anggil Maulana
+                    <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>
+                </div>
+                <div class="story">
+                    🌍 Pengalaman memotret oleh Anggil Maulana
+                    <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>
+                </div>
+            </div>
+            <input type="text" id="storyInput" class="story-input" placeholder="Tambahkan cerita baru...">
+            <button class="add-story" onclick="addStory()">Tambah Cerita</button>
+        </div>
+    </div>
+
+    <script>
+        function addStory() {
+            let input = document.getElementById("storyInput");
+            let storyList = document.getElementById("storyList");
+
+            if (input.value.trim() !== "") {
+                let newStory = document.createElement("div");
+                newStory.classList.add("story");
+                newStory.innerHTML = "📖 " + input.value + ' <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>';
+                storyList.appendChild(newStory);
+                input.value = "";
+            }
+        }
+
+        function deleteStory(element) {
+            element.parentElement.remove();
+        }
+
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById("profileImg").src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pengalaman.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+
+    <!-- Biografi Container -->
+    <div class="container">
+        <div class="header">
+            <h1><span>Nisya</span> Salsabila</h1>
+            <div class="profile-img-container">
+                <img id="profileImage" src="gambar 4.jpg" alt="Foto Profil" class="profile-img">
+                <input type="file" id="uploadImage" class="upload-btn" accept="image/*">
+                <label for="uploadImage" class="upload-label">Pilih Foto</label>
+            </div>
+        </div>
+
+        <p class="quote">"Salsabilanisa yang biasa di kenal dengan sebutan Nisya Salsabila."</p>
+
+        <div class="info">
+            <p><strong>Usia:</strong> 20 tahun</p>
+            <p><strong>Universitas:</strong> Mahasiswa Universitas Syiah Kuala, Banda Aceh</p>
+            <p><strong>Profesi:</strong> Mahasiswa Pendidikan Matematika</p>
+        </div>
+
+        <div class="icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384062.png" alt="Twitter">
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-wrapper">
+            <video controls>
+                <source src="vidio.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="study case.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+
+    <!-- Case Study Section -->
+    <div class="container">
+        <div class="case-study-section">
+            <h2> ABOUT US</h2>
+            <div class="case-study-grid">
+                
+                <!-- Case Study 1 -->
+                <div class="case-card">
+                    <img src="gambar 6.jpg" alt="Case Study 1" class="case-img">
+                    <div class="case-content">
+                        <div class="case-title">Gambar Pertama</div>
+                        <div class="case-desc">Jangan takut bereksperimen. Setiap desain adalah langkah menuju karya terbaik.</div>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card">
+                    <img src="gambar 7.jpg" alt="Case Study 2" class="case-img">
+                    <div class="case-content">
+                        <div class="case-title">Gambar Kedua</div>
+                        <div class="case-desc">Setiap error adalah pelajaran, bukan hambatan. Koding adalah seni menciptakan solusi.</div>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-card">
+                    <img src="gambar 9.jpg" alt="Case Study 3" class="case-img">
+                    <div class="case-content">
+                        <div class="case-title">Gambar Ketiga</div>
+                        <div class="case-desc">Setiap potongan video adalah bagian dari cerita yang lebih besar.</div>
+                        <a href="#" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Foto & Kata-kata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Tentang.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+
+    <div class="container">
+        <h2>Tambah Foto & Kata-kata</h2>
+        <div class="upload-container">
+            <label for="imageUpload" class="upload-label">Pilih Foto</label>
+            <input type="file" id="imageUpload" class="upload-input" accept="image/*">
+            <img id="imagePreview" class="image-preview" alt="Foto yang diunggah">
+        </div>
+        <input type="text" id="textInput" class="text-input" placeholder="Masukkan kata-kata...">
+        <button class="btn-submit" onclick="saveData()">Kirim</button>
+    </div>
+
+    <div class="result-container" id="resultContainer"></div>
+ 
+    <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                    document.getElementById('imagePreview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function saveData() {
+            const textValue = document.getElementById('textInput').value;
+            const imageSrc = document.getElementById('imagePreview').src;
+
+            if (!textValue || imageSrc.includes("null")) {
+                alert("Harap pilih foto dan isi teks terlebih dahulu!");
+                return;
+            }
+
+            const resultContainer = document.getElementById('resultContainer');
+            const newResult = document.createElement('div');
+            newResult.classList.add('result');
+            newResult.innerHTML = `
+                <img src="${imageSrc}" alt="Foto yang disimpan">
+                <p>"${textValue}"</p>
+            `;
+            resultContainer.appendChild(newResult);
+
+            document.getElementById('imagePreview').style.display = 'none';
+            document.getElementById('imageUpload').value = '';
+            document.getElementById('textInput').value = '';
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi & Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="About.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1><span>Foto</span> Saya</h1>
+            <img id="profileImg" src="gambar 5.jpg" alt="Foto saya" class="profile-img">
+            <input type="file" id="fileInput" accept="image/*">
+            <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Ganti Foto</button>
+        </div>
+        <p class="quote">"Tambahkan foto terbaik dan pengalaman paling menarik kamu terima kasih."</p>
+        <div class="info">
+            <p><strong>Usia:</strong> 20 tahun</p>
+            <p><strong>Asal:</strong> pidie, Indonesia</p>
+            <p><strong>Profesi:</strong> math education student</p>
+        </div>
+
+        <div class="story-section">
+            <h2>📖 Story</h2>
+            <div class="story-list" id="storyList">
+                <div class="story">
+                    📷 Perjalanan pertama saya sebagai pacar seorang Anggil Maulana
+                    <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>
+                </div>
+                <div class="story">
+                    🌍 Pengalaman memotret oleh Anggil Maulana
+                    <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>
+                </div>
+            </div>
+            <input type="text" id="storyInput" class="story-input" placeholder="Tambahkan cerita baru...">
+            <button class="add-story" onclick="addStory()">Tambah Cerita</button>
+        </div>
+    </div>
+
+    <script>
+        function addStory() {
+            let input = document.getElementById("storyInput");
+            let storyList = document.getElementById("storyList");
+
+            if (input.value.trim() !== "") {
+                let newStory = document.createElement("div");
+                newStory.classList.add("story");
+                newStory.innerHTML = "📖 " + input.value + ' <button class="delete-btn" onclick="deleteStory(this)">Hapus</button>';
+                storyList.appendChild(newStory);
+                input.value = "";
+            }
+        }
+
+        function deleteStory(element) {
+            element.parentElement.remove();
+        }
+
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById("profileImg").src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        });
+    </script>
+</body>
+</html>

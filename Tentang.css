@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    border-bottom: 2px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-weight: 1000;
+}
+
+.navbar a:hover {
+    color: #ff6600;
+}
+
+.container {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.upload-container {
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 3px solid #ff6600;
+    margin-top: 10px;
+    object-fit: cover;
+    display: none;
+}
+
+.upload-label {
+    display: block;
+    background: #ff6600;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    margin: 10px auto;
+    max-width: 200px;
+}
+
+.upload-input {
+    display: none;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.text-preview {
+    font-size: 18px;
+    font-style: italic;
+    color: #bbb;
+    margin-top: 15px;
+    display: none;
+}
+
+.btn-submit {
+    background: #ff6600;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #e65c00;
+}
+
+.result-container {
+    margin-top: 30px;
+}
+
+.result {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.result img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    border: 3px solid #ff6600;
+}
+
+.result p {
+    font-style: italic;
+    margin-top: 10px;
+}

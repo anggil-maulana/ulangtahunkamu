@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pengalaman.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="Dasboard.html" class="contact-btn">Back</a>
+    </div>
+
+    <!-- Biografi Container -->
+    <div class="container">
+        <div class="header">
+            <h1><span>Nisya</span> Salsabila</h1>
+            <div class="profile-img-container">
+                <img id="profileImage" src="gambar 4.jpg" alt="Foto Profil" class="profile-img">
+                <input type="file" id="uploadImage" class="upload-btn" accept="image/*">
+                <label for="uploadImage" class="upload-label">Pilih Foto</label>
+            </div>
+        </div>
+
+        <p class="quote">"Salsabilanisa yang biasa di kenal dengan sebutan Nisya Salsabila."</p>
+
+        <div class="info">
+            <p><strong>Usia:</strong> 20 tahun</p>
+            <p><strong>Universitas:</strong> Mahasiswa Universitas Syiah Kuala, Banda Aceh</p>
+            <p><strong>Profesi:</strong> Mahasiswa Pendidikan Matematika</p>
+        </div>
+
+        <div class="icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384062.png" alt="Twitter">
+        </div>
+
+        <!-- Video Section -->
+        <div class="video-wrapper">
+            <video controls>
+                <source src="vidio.mp4" type="video/mp4">
+                Browser Anda tidak mendukung tag video.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('uploadImage').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+</body>
+</html>
